@@ -1,0 +1,6 @@
+
+checkpoints/roomsplit/latest_net_D.pth
+checkpoints/roomsplit/latest_net_G.pth
+checkpoints/roomsplit/loss_log.txt
+checkpoints/roomsplit/test_opt.txt
+checkpoints/roomsplit/train_opt.txt

@@ -1,0 +1,10 @@
+argparse
+numpy
+matplotlib
+shapely
+descartes 
+dominate
+torch
+torchvision
+wandb
+visdom
