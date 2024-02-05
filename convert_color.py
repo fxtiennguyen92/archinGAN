@@ -1,6 +1,7 @@
 from PIL import Image
+import os
 
-def change_color(image_path):
+def change_color(image_path, dest_path):
     # Open the image
     image = Image.open(image_path)
     # Convert image to RGB mode if it's not already in that mode
@@ -31,8 +32,13 @@ def change_color(image_path):
                 pixels[x, y] = (251, 7, 0)
                 
     # Save the modified image
-    image.save("modified_image.png")
+    image.save(dest_path)
 
-# Example usage
-image_path = "dataset/s2_floorplan/FootprintInputLayer__RepartitionInputLayer/train/2_gt_16.png"
-change_color(image_path)
+input_folder = 'dataset/fenestration'
+dest_folder = 'dataset/fenestration/val'
+
+filenames = os.listdir(input_folder)
+for filename in filenames:
+    image_path = os.path.join(input_folder, filename)
+    dest_path = os.path.join(dest_folder, filename)
+    change_color(image_path, dest_path)
