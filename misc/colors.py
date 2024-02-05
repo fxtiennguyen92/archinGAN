@@ -1,10 +1,10 @@
 semantics_cmap = {
-    'living room': '#e6194b',
-    'kitchen': '#3cb44b',
-    'bedroom': '#ffe119',
-    'bathroom': '#0082c8',
+    'living room': '#80FF7C',
+    'kitchen': '#7DFF7D',
+    'bedroom': '#FF797F',
+    'bathroom': '#FF74F3',
     'balcony': '#f58230',
-    'corridor': '#911eb4',
+    'corridor': '#7B80FF',
     'dining room': '#46f0f0',
     'study': '#f032e6',
     'studio': '#d2f53c',
@@ -15,9 +15,10 @@ semantics_cmap = {
     'basement': '#fffac8',
     'garage': '#800000',
     'undefined': '#aaffc3',
-    'door': '#808000',
+    'door': '#00FF03',
     'window': '#ffd7b4',
     'outwall': '#000000',
+    'closet': '#F49B82',
 }
 
 
