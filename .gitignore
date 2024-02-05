@@ -1,2 +1,4 @@
 *.pyc
 dataset/*
+checkpoints/*
+scraping_data/dataset/*
