@@ -17,6 +17,21 @@ if sys.version_info[0] == 2:
 else:
     VisdomExceptionBase = ConnectionError
 
+def only_save_images(base_dir, visuals, image_path, aspect_ratio=1.0, width=256, use_wandb=False):
+    short_path = ntpath.basename(image_path[0])
+    name = os.path.splitext(short_path)[0]
+
+    ims_dict = {}
+    for label, im_data in visuals.items():
+        if (label != 'real_B'):
+            im = util.tensor2im(im_data)
+            image_name = '%s_%s.png' % (name, label)
+            save_path = os.path.join(base_dir, image_name)
+            util.save_image(im, save_path, aspect_ratio=aspect_ratio)
+            if use_wandb:
+                ims_dict[label] = wandb.Image(im)
+    if use_wandb:
+        wandb.log(ims_dict)
 
 def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, use_wandb=False):
     """Save images to the disk.
